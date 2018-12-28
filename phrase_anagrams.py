@@ -30,6 +30,7 @@ def find_anagrams(name, word_list):
 
 def process_choice(name):
     """Check user choice for validity, return choice & leftover letters."""
+
     while True:
         choice = input('\nMake a choice else Enter to start over or # to end: ')
         if choice == '':
