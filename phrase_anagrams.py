@@ -52,7 +52,7 @@ def process_choice(name):
 
 def main():
     """Help user build anagram phrase from their name."""
-    name = .join(ini_name.lower().split())
+    name = ''.join(ini_name.lower().split())
     name = name.replace('-', '')
     limit = len(name)
     phrase = ''
@@ -85,4 +85,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-    
