@@ -27,4 +27,27 @@ def find_anagrams(name, word_list):
     print("Remaining letters = {}".format(name))
     print("Number of remaining letters = {}".format(len(name)))
     print("Number of remaining (real world) anagrams = {}".format(len(anagrams)))
+
+def process_choice(name):
+    """Check user choice for validity, return choice & leftover letters."""
+    while True:
+        choice = input('\nMake a choice else Enter to start over or # to end: ')
+        if choice == '':
+            main()
+        elif choice == '#':
+            sys.exit()
+        else:
+            candidate = ''.join(choice.lower().split())
+        left_over_list = list(name)
+        for letter in candidate:
+            if letter in left_over_list:
+                left_over_list.remove(letter)
+        if len(name) - len(left_over_list) == len(candidate):
+            break
+        else:
+            print("Won't work! Make another choice!", file=sys.stderr)
+    
+    name = ''.join(left_over_list)  # make display more readable
+    return choice, name
+
     
