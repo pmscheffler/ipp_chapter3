@@ -32,9 +32,9 @@ def cv_map_words(word_list):
     vowels = 'aeiouy'
     cv_map_words = []
     for word in word_list:
-        temp = ;;
+        temp = ''
         for letter in word:
-            if lenin vowels:
+            if letter in vowels:
                 temp += 'v'
             else:
                 temp += 'c'
@@ -61,7 +61,7 @@ def cv_map_filter(name, filtered_cv_map):
     filter_1 = set()
     for candidate in perms:
         temp = ''
-        for leter in candidate:
+        for letter in candidate:
             if letter in vowels:
                 temp += 'v'
             else:
